@@ -1,19 +1,16 @@
-extends Area2D
+extends EnemyParent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+func test():
+	print("This is called from the Enemy Script")
+	pass
 
+#func movement(_delta: float) -> KinematicCollision2D:
+#	return move_and_collide(direction * velocity * _delta)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-
-func _on_Enemy_body_entered(body: Node) -> void:
-	if "Player" in body.name:
-		#Player Dead Game Over
-		pass
-	if "Ball" in body.name:
-		get_parent().remove_enemy(self)
-		pass
-	pass # Replace with function body.
+func shoot_bullets():
+	print("pewpew")
+	pass

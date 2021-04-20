@@ -6,7 +6,7 @@ var direction : Vector2 = Vector2.ZERO
 var in_area : bool = false
 
 
-var number_of_bounces = 7
+var number_of_bounces = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,6 +37,9 @@ func bounce(collision : KinematicCollision2D):
 	if !(collision.collider is KinematicBody2D): 
 			direction = direction.bounce(collision.normal)
 			number_of_bounces -= 0
+	elif "Enemy" in collision.collider.get("name"):
+		collision.collider.call_deferred("hit")
+#		print(collision.collider.get("name"))
 	pass
 
 func _on_PlayerDetector_body_entered(body: Node) -> void:
