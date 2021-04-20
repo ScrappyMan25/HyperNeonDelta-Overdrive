@@ -67,6 +67,9 @@ func _input(event):
 		pass
 pass
 
+func player_hit():
+	print("Player_hit")
+	pass
 
 func _on_DashTimer_timeout() -> void:
 	is_dashing = false
