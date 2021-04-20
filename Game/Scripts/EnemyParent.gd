@@ -4,6 +4,7 @@ class_name EnemyParent
 export var velocity : int = 0
 export var direction : Vector2 = Vector2.ZERO
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
@@ -38,5 +39,4 @@ func test():
 	pass
 
 func shoot_bullets():
-
 	pass
