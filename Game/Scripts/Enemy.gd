@@ -12,5 +12,5 @@ func test():
 #	return move_and_collide(direction * velocity * _delta)
 
 func shoot_bullets():
-	print("pewpew")
+#	print("pewpew")
 	pass
