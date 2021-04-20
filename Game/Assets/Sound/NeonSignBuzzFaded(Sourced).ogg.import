@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/NeonSignBuzzFaded(Sourced).ogg-22e959390f3c0ae61b8ea6a22d7e270b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/NeonSignBuzzFaded(Sourced).ogg"
+dest_files=[ "res://.import/NeonSignBuzzFaded(Sourced).ogg-22e959390f3c0ae61b8ea6a22d7e270b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

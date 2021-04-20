@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Coup d'etat.ogg-9a929cf1f619d43ed361c674c122e6b3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Coup d'etat.ogg"
+dest_files=[ "res://.import/Coup d'etat.ogg-9a929cf1f619d43ed361c674c122e6b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

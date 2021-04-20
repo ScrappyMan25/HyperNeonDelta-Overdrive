@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Second Chance.ogg-6003361eacd7181225f32936f01004b1.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Second Chance.ogg"
+dest_files=[ "res://.import/Second Chance.ogg-6003361eacd7181225f32936f01004b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

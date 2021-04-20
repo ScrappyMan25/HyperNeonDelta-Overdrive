@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ricochet.ogg-164535527a16e41eca902d75e618cc0c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Ricochet.ogg"
+dest_files=[ "res://.import/Ricochet.ogg-164535527a16e41eca902d75e618cc0c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

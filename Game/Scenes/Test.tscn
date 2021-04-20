@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 527.313, 10 )
+
+[node name="Test" type="Node"]
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 570.548, 304.842 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 168.179, 282.541 )
+
+[node name="EnemyManager" parent="." instance=ExtResource( 3 )]
+
+[node name="Barriers" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Barriers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D"]
+position = Vector2( 495.34, -1.7818 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Barriers"]
+position = Vector2( 2.11896, 576.348 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D2"]
+position = Vector2( 495.34, -1.7818 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Barriers"]
+position = Vector2( -2.87646, -22.0167 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D3"]
+position = Vector2( 495.34, -1.7818 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Barriers"]
+position = Vector2( 1033.11, -22.0167 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/StaticBody2D4"]
+position = Vector2( 495.34, -1.7818 )
+shape = SubResource( 1 )

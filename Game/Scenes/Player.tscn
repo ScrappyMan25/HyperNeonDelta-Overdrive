@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GameAssets/Player/Player..png" type="Texture" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 524288
+collision_mask = 524288
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PoolVector2Array( -0.062149, -30.6902, -31.5266, 31.3023, 30.6531, 31.115 )
+
+[node name="DashTimer" type="Timer" parent="."]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Neon Delta Game Music.ogg-fe8b1a2cbf7ac4be9dd47ed3796f7094.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Neon Delta Game Music.ogg"
+dest_files=[ "res://.import/Neon Delta Game Music.ogg-fe8b1a2cbf7ac4be9dd47ed3796f7094.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

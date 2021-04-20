@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Reflect Shield Power Up.ogg-c74fdfbd96c2870f4cffeb634d881bcc.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Reflect Shield Power Up.ogg"
+dest_files=[ "res://.import/Reflect Shield Power Up.ogg-c74fdfbd96c2870f4cffeb634d881bcc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

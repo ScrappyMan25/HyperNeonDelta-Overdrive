@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ScoreMultiplier.ogg-cc427ff52d49a1c72ffb0dc59aac37a9.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/ScoreMultiplier.ogg"
+dest_files=[ "res://.import/ScoreMultiplier.ogg-cc427ff52d49a1c72ffb0dc59aac37a9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
