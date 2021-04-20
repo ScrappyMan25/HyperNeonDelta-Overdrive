@@ -18,7 +18,7 @@ func _ready():
 		spawn_point.position = pos #sets where spawn point where bullet will spawn
 		spawn_point.rotation = pos.angle() #set the angle spawn point which in turn will be used for the bullet angle
 		rotator.add_child(spawn_point) #Bullets will rotate with the rotator
-
+	$ShootTimer.connect("timeout", self, "_on_ShootTimer_timeout")
 	shoot_timer.wait_time = shooter_timer_wait_time
 	shoot_timer.start()
 	

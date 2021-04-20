@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/TE.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/GameAssets/Background/ArenaBorder.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Background/Background.png" type="Texture" id=7]
@@ -71,9 +70,6 @@ position = Vector2( 570.548, 304.842 )
 position = Vector2( 168.179, 282.541 )
 
 [node name="EnemyManager" parent="." instance=ExtResource( 3 )]
-
-[node name="TE" parent="." instance=ExtResource( 4 )]
-position = Vector2( 444.997, 260.705 )
 
 [node name="Bullet" parent="." instance=ExtResource( 5 )]
 position = Vector2( 218.753, 281.682 )
