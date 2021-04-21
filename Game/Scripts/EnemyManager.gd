@@ -1,6 +1,6 @@
 extends Node2D
 
-var Enemy = preload("res://Scenes/Enemy_8.tscn")
+var Enemy = preload("res://Scenes/Enemy_9.tscn")
 var Player : KinematicBody2D
 var count = 1
 # Called when the node enters the scene tree for the first time.

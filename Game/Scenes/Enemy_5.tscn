@@ -7,10 +7,12 @@
 radius = 35.9311
 
 [node name="Enemy_5" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 131072
 script = ExtResource( 1 )
 shooter_timer_wait_time = 0.8
 spawn_point_count = 8
-radius = 75
+radius = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

@@ -4,13 +4,15 @@
 [ext_resource path="res://Assets/GameAssets/Spinner.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 35.9311
+radius = 32.0
 
 [node name="Enemy_8" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 131072
 script = ExtResource( 1 )
 shooter_timer_wait_time = 0.3
 spawn_point_count = 6
-radius = 75
+radius = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

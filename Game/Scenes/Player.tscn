@@ -13,9 +13,16 @@ script = ExtResource( 1 )
 rotation = 1.5708
 texture = ExtResource( 2 )
 
+[node name="DashParticles" type="CPUParticles2D" parent="."]
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
 polygon = PoolVector2Array( -0.062149, -30.6902, -31.5266, 31.3023, 30.6531, 31.115 )
 
 [node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_DashCooldownTimer_timeout"]

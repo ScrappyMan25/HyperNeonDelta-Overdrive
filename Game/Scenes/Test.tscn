@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -9,9 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 527.313, 10 )
-
-[sub_resource type="Environment" id=2]
-glow_enabled = true
 
 [node name="Test" type="Node"]
 
@@ -73,6 +70,3 @@ position = Vector2( 168.179, 282.541 )
 
 [node name="Bullet" parent="." instance=ExtResource( 5 )]
 position = Vector2( 218.753, 281.682 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
