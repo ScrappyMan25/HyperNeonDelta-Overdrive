@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var Score : int = 0
 var Player_Health : int = 3
 
 #Variables required for movement

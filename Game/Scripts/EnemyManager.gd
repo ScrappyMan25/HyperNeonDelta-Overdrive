@@ -1,6 +1,6 @@
 extends Node2D
 
-var Enemy = preload("res://Scenes/Enemy_9.tscn")
+var Enemy = preload("res://Scenes/Enemy_4.tscn")
 var Player : KinematicBody2D
 var count = 1
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +22,8 @@ func add_enemy():
 	pass
 
 func remove_enemy(enemy : Node):
-	Player.Score += 10
-	print(Player.Score)
+#	Player.Score += 10
+#	print(Player.Score)
 	enemy.queue_free()
 	print(get_child_count())
 	if get_child_count() == 1:

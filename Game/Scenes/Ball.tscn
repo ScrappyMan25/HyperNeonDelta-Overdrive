@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
-[ext_resource path="res://Assets/GameAssets/Player/NewBullet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GameAssets/Player/RoundedBullet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GameAssets/Player/Dial2.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.7691
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 143.408
+radius = 100.0
 
 [node name="Ball" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -32,8 +32,7 @@ collision_mask = 524289
 shape = SubResource( 2 )
 
 [node name="AOE" type="Node2D" parent="Redirector"]
-visible = false
-scale = Vector2( 4.75424, 4.75424 )
+scale = Vector2( 3.5, 3.5 )
 
 [node name="Circle" type="Sprite" parent="Redirector/AOE"]
 modulate = Color( 1, 1, 1, 0.235294 )

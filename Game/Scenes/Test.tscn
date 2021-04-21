@@ -3,24 +3,32 @@
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/GameAssets/Background/ArenaBorder.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Background/Background.png" type="Texture" id=7]
+
+[sub_resource type="Environment" id=2]
+background_mode = 4
+glow_enabled = true
+glow_strength = 1.45
+glow_blend_mode = 0
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 527.313, 10 )
 
 [node name="Test" type="Node"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Node2D"]
-modulate = Color( 0.992157, 0.105882, 1, 1 )
+modulate = Color( 0.992157, 0.105882, 1, 0.686275 )
 position = Vector2( 512.01, 288.032 )
 texture = ExtResource( 7 )
 
 [node name="Sprite2" type="Sprite" parent="Node2D"]
-modulate = Color( 0.113725, 0.968627, 0.972549, 1 )
+modulate = Color( 0.113725, 0.968627, 0.972549, 0.823529 )
 position = Vector2( 512, 288 )
 texture = ExtResource( 6 )
 
@@ -67,6 +75,3 @@ position = Vector2( 570.548, 304.842 )
 position = Vector2( 168.179, 282.541 )
 
 [node name="EnemyManager" parent="." instance=ExtResource( 3 )]
-
-[node name="Bullet" parent="." instance=ExtResource( 5 )]
-position = Vector2( 218.753, 281.682 )
