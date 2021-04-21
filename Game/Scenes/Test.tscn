@@ -7,19 +7,19 @@
 [ext_resource path="res://Assets/GameAssets/Background/ArenaBorder.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Background/Background.png" type="Texture" id=7]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
 glow_strength = 1.45
 glow_blend_mode = 0
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 527.313, 10 )
 
 [node name="Test" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 1 )
 
 [node name="Trail" parent="." instance=ExtResource( 4 )]
 
@@ -43,7 +43,7 @@ scale = Vector2( 1, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Barriers/StaticBody2D"]
 position = Vector2( 495.34, -1.7818 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Node2D/Barriers"]
 position = Vector2( 1.69159, 572.153 )
@@ -51,7 +51,7 @@ scale = Vector2( 1, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Barriers/StaticBody2D2"]
 position = Vector2( 495.34, -1.7818 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Node2D/Barriers"]
 position = Vector2( 3.60837, -22.165 )
@@ -60,7 +60,7 @@ scale = Vector2( 1, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Barriers/StaticBody2D3"]
 position = Vector2( 495.34, -1.7818 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Node2D/Barriers"]
 position = Vector2( 1018.51, -21.1691 )
@@ -69,7 +69,7 @@ scale = Vector2( 1, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Barriers/StaticBody2D4"]
 position = Vector2( 495.34, -1.7818 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 288 )

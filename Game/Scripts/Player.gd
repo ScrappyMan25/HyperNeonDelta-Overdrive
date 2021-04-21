@@ -33,11 +33,8 @@ func _physics_process(delta):
 			apply_movement(axis * ACCELERATION * delta)
 		motion = move_and_slide(motion)
 		velocity = move_and_slide(velocity)
-	
-	
-	
 
-func get_input_axis(): 
+func get_input_axis() -> Vector2: 
 	var axis = Vector2.ZERO
 	axis.x = int(Input.is_action_pressed("ui_left")) - int(Input.is_action_pressed("ui_right"))
 	axis.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
@@ -48,23 +45,17 @@ func get_input_axis():
 	#Dash Code
 	if Input.is_action_just_pressed("ui_accept") and can_dash:#can_dash:
 		dash()
-	else:
-		pass
-	pass
-	
 	return axis.normalized()
-	
-#	return input
-	
-	
-func apply_friction(FRICTION):
-	if motion.length() > FRICTION:
-		motion -= motion.normalized() * FRICTION
+
+func apply_friction(f):
+	if motion.length() > f:
+		motion -= motion.normalized() * f
 	else:
 		motion = Vector2.ZERO
-	
-func apply_movement(ACCELERATION):
-	motion += ACCELERATION
+	pass
+
+func apply_movement(a):
+	motion += a
 	motion = motion.clamped(MAX_SPEED)
 	if motion.length() > MAX_SPEED:
 		motion = motion.normalized() * MAX_SPEED
@@ -72,6 +63,7 @@ func apply_movement(ACCELERATION):
 
 func player_hit():
 	Player_Health -= 1
+	print("Player Health: " + (Player_Health as String))
 	pass
 
 func dash():
