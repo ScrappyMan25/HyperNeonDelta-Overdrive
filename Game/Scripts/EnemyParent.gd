@@ -74,6 +74,7 @@ func hit():
 func movement(_delta: float) -> KinematicCollision2D:
 	if is_ready:
 		return move_and_collide(direction * velocity * _delta)
+#		return move_and_collide(Vector2.ZERO)
 	else:
 		return move_and_collide(Vector2.ZERO)
 

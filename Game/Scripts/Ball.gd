@@ -55,7 +55,8 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 
 
 func _on_EnemyHitDetector_body_entered(body: Node) -> void:
-	if "Enemy" in body.name:
+	if "Enemy" in body.name && body.is_ready:
+		get_parent().get_node("Camera2D").add_trauma(0.5)
 		body.hit()
 	pass # Replace with function body.
 

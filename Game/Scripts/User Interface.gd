@@ -3,6 +3,8 @@ var HighScore = 0
 var EnemyManager_Timer : Timer
 var Player
 
+var Game_is_over : bool = false
+
 const filepath = "user://highscore.data"
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,13 +34,14 @@ func save_highscore():
 	pass
 
 func _process(_delta: float) -> void:
-	$Time.text = "Time: " + stepify(EnemyManager_Timer.time_left,0.01) as String
+	if !Game_is_over:
+		$Time.text = "Time: " + stepify(EnemyManager_Timer.time_left,0.01) as String
 	updateScore(Player.score)
 	pass
 
 func updateScore(score: int):
 	$Score.text = score as String
-	if score > HighScore:
+	if score > HighScore && Game_is_over:
 		$GameOver/NewHighScoreLabel.show()
 		$GameOver/Result.hide()
 		$GameOver/NewHighScoreLabel.text = "NEW HIGH SCORE: "+ score as String
@@ -47,17 +50,18 @@ func updateScore(score: int):
 	else:
 		$GameOver/NewHighScoreLabel.hide()
 		$GameOver/Result.show()
-		$GameOver/Result/FinalScore.text = "SCORE: "+score as String
+		$GameOver/Result/FinalScore.text = "SCORE: "+ score as String
 		$GameOver/Result/HighScore.text = "HIGH SCORE: "+ HighScore as String
 	pass
 
 func _Game_Over():
+	Game_is_over = true
 	get_parent().get_node("BG/Background").hide()
 	get_parent().get_node("Player").hide()
-	get_parent().get_node("EnemyManager").hide()
-	get_parent().get_node("Ball").hide()
+	get_parent().get_node("EnemyManager").queue_free()
+	get_parent().get_node("Ball").queue_free()
 	get_parent().get_node("Trail").hide()
-	get_parent().get_node("Bullets").hide()
+	get_parent().get_node("Bullets").queue_free()
 	
 	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
 	
