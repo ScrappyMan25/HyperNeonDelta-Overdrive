@@ -42,6 +42,11 @@ func save_highscore():
 
 func _process(_delta: float) -> void:
 	if !Game_is_over:
+		if EnemyManager_Timer.time_left < 3:
+			var t = (3-EnemyManager_Timer.time_left) / 6
+			get_parent().get_node("Overlay").modulate.a = t
+		else:
+			get_parent().get_node("Overlay").modulate.a = 0
 		$Timer/Time.text = stepify(EnemyManager_Timer.time_left,0.01) as String
 		if EnemyManager_Timer.paused:
 			$Timer/ClockAnimation.stop()

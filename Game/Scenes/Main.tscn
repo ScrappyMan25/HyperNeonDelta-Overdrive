@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Assets/black_color.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=4]
@@ -40,3 +41,9 @@ position = Vector2( -504, -280 )
 position = Vector2( 504, 280 )
 
 [node name="Particles" type="Node2D" parent="."]
+
+[node name="Overlay" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 42, 266 )
+scale = Vector2( 43.375, 43.375 )
+texture = ExtResource( 1 )
