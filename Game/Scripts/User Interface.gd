@@ -17,6 +17,7 @@ func _ready():
 	get_tree().paused = false
 	$PauseMenu.hide()
 	$GameOver.hide()
+	$GameOverFade.hide()
 	updateScore(0)
 	load_highscore()
 	EnemyManager_Timer = get_parent().get_node("EnemyManager/Timer")
@@ -42,10 +43,10 @@ func save_highscore():
 func _process(_delta: float) -> void:
 	if !Game_is_over:
 		$Timer/Time.text = stepify(EnemyManager_Timer.time_left,0.01) as String
-	if EnemyManager_Timder.paused && !Game_is_over:
-		$Timer/ClockAnimation.stop()
-	else:
-		$Timer/ClockAnimation.play()
+		if EnemyManager_Timer.paused:
+			$Timer/ClockAnimation.stop()
+		else:
+			$Timer/ClockAnimation.play()
 	updateScore(Player.score)
 	pass
 
@@ -66,21 +67,10 @@ func updateScore(score: int):
 
 func _Game_Over():
 	Game_is_over = true
-	$Timer.queue_free()
-	get_parent().get_node("BG/Background").hide()
-	get_parent().get_node("Player").hide()
-	get_parent().get_node("EnemyManager").queue_free()
-	get_parent().get_node("Ball").queue_free()
-	get_parent().get_node("Trail").hide()
-	get_parent().get_node("Bullets").queue_free()
-	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
-	
+	$GameOverFade.show()
+	$GameOverFade/FadeIn.play("GameOverFade")
+	$Timer/ClockAnimation.stop()
 	get_tree().paused = true
-	$Score.hide()
-	$Timer.hide()
-	$PauseButton.hide()
-	$PauseMenu.hide()
-	$GameOver.show()
 	pass
 
 func _on_PauseButton_pressed():
@@ -113,4 +103,23 @@ func _on_Exit_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+	pass # Replace with function body.
+
+
+func _on_FadeIn_animation_finished(anim_name):
+	$GameOverFade.hide()
+	$Timer.queue_free()
+	get_parent().get_node("BG/Background").hide()
+	get_parent().get_node("Player").hide()
+	get_parent().get_node("EnemyManager").queue_free()
+	get_parent().get_node("Ball").queue_free()
+	get_parent().get_node("Trail").hide()
+	get_parent().get_node("Bullets").queue_free()
+	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
+	
+	$Score.hide()
+	$Timer.hide()
+	$PauseButton.hide()
+	$PauseMenu.hide()
+	$GameOver.show()
 	pass # Replace with function body.
