@@ -11,5 +11,5 @@ dest_files=[ "res://.import/NeonSignBuzzFaded(Sourced).ogg-22e959390f3c0ae61b8ea
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
