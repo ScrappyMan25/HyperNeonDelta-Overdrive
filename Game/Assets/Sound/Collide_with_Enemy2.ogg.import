@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Collide_with_Enemy2.ogg-dc7de126cd0c018fd15405332002b9b9.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Collide_with_Enemy2.ogg"
+dest_files=[ "res://.import/Collide_with_Enemy2.ogg-dc7de126cd0c018fd15405332002b9b9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
