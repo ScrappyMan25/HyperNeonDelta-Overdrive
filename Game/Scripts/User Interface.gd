@@ -41,7 +41,11 @@ func save_highscore():
 
 func _process(_delta: float) -> void:
 	if !Game_is_over:
-		$Time.text = "Time: " + stepify(EnemyManager_Timer.time_left,0.01) as String
+		$Timer/Time.text = stepify(EnemyManager_Timer.time_left,0.01) as String
+	if EnemyManager_Timder.paused && !Game_is_over:
+		$Timer/ClockAnimation.stop()
+	else:
+		$Timer/ClockAnimation.play()
 	updateScore(Player.score)
 	pass
 
@@ -62,18 +66,18 @@ func updateScore(score: int):
 
 func _Game_Over():
 	Game_is_over = true
+	$Timer.queue_free()
 	get_parent().get_node("BG/Background").hide()
 	get_parent().get_node("Player").hide()
 	get_parent().get_node("EnemyManager").queue_free()
 	get_parent().get_node("Ball").queue_free()
 	get_parent().get_node("Trail").hide()
 	get_parent().get_node("Bullets").queue_free()
-	
 	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
 	
 	get_tree().paused = true
 	$Score.hide()
-	$Time.hide()
+	$Timer.hide()
 	$PauseButton.hide()
 	$PauseMenu.hide()
 	$GameOver.show()

@@ -23,3 +23,4 @@ stream = ExtResource( 3 )
 
 [node name="SlowDownTime" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.0
