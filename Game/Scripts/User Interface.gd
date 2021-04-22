@@ -47,6 +47,11 @@ func _process(_delta: float) -> void:
 			$Timer/ClockAnimation.stop()
 		else:
 			$Timer/ClockAnimation.play()
+	if Input.is_action_just_pressed("ui_cancel"):
+		if get_tree().paused:
+			_on_Continue_pressed()
+		else:
+			_Pause_Game()
 	updateScore(Player.score)
 	pass
 
@@ -73,11 +78,10 @@ func _Game_Over():
 	get_tree().paused = true
 	pass
 
-func _on_PauseButton_pressed():
+func _Pause_Game():
 	get_tree().paused = true
 	$PauseMenu.show()
-	pass # Replace with function body.
-
+	pass
 
 func _on_Continue_pressed():
 	get_tree().paused = false
@@ -120,7 +124,6 @@ func _on_FadeIn_animation_finished(_anim_name):
 	
 	$Score.hide()
 	$Timer.hide()
-	$PauseButton.hide()
 	$PauseMenu.hide()
 	$GameOver.show()
 	pass # Replace with function body.
