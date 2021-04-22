@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var Player_Health : int = 3
+var score : int  = 0
 
 #Variables required for movement
 var velocity : Vector2 = Vector2.ZERO
@@ -21,7 +22,6 @@ export(float) var dash_length : float = 0.1
 var dash_direction : Vector2
 
 func _physics_process(delta):
-	
 	if is_dashing == true:
 		velocity = move_and_slide(dash_direction)
 #		is_dashing = false
@@ -63,7 +63,10 @@ func apply_movement(a):
 
 func player_hit():
 	Player_Health -= 1
-#	print("Player Health: " + (Player_Health as String))
+	if Player_Health < 0:
+		print("KOOOOOOOOO")
+		get_parent().get_node("User Interface")._Game_Over()
+		pass
 	pass
 
 func dash():

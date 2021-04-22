@@ -58,3 +58,11 @@ func _on_EnemyHitDetector_body_entered(body: Node) -> void:
 	if "Enemy" in body.name:
 		body.hit()
 	pass # Replace with function body.
+
+
+func _on_EnemyHitDetector_area_entered(area: Area2D) -> void:
+	if "Bullet" in area.name:
+		area.queue_free()
+		get_parent().get_node("Player").score += 1
+		pass
+	pass # Replace with function body.

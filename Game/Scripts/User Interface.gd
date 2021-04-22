@@ -1,5 +1,8 @@
 extends CanvasLayer
 var HighScore = 0
+var EnemyManager_Timer : Timer
+var Player
+
 const filepath = "user://highscore.data"
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +11,8 @@ func _ready():
 	$GameOver.hide()
 	updateScore(0)
 	load_highscore()
+	EnemyManager_Timer = get_parent().get_node("EnemyManager/Timer")
+	Player = get_parent().get_node("Player")
 	pass # Replace with function body.
 
 func load_highscore():
@@ -25,7 +30,12 @@ func save_highscore():
 	file.store_var(HighScore)
 	file.close()
 	pass
-	
+
+func _process(_delta: float) -> void:
+	$Time.text = "Time: " + stepify(EnemyManager_Timer.time_left,0.01) as String
+	updateScore(Player.score)
+	pass
+
 func updateScore(score: int):
 	$Score.text = score as String
 	if score > HighScore:
@@ -41,7 +51,23 @@ func updateScore(score: int):
 		$GameOver/Result/HighScore.text = "HIGH SCORE: "+ HighScore as String
 	pass
 
-
+func _Game_Over():
+	get_parent().get_node("BG/Background").hide()
+	get_parent().get_node("Player").hide()
+	get_parent().get_node("EnemyManager").hide()
+	get_parent().get_node("Ball").hide()
+	get_parent().get_node("Trail").hide()
+	get_parent().get_node("Bullets").hide()
+	
+	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
+	
+	get_tree().paused = true
+	$Score.hide()
+	$Time.hide()
+	$PauseButton.hide()
+	$PauseMenu.hide()
+	$GameOver.show()
+	pass
 
 func _on_PauseButton_pressed():
 	get_tree().paused = true

@@ -22,7 +22,7 @@ func _on_Quit_pressed():
 	pass # Replace with function body.
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	queue_free()
 	var err = get_tree().change_scene_to(scene_to_load)
 	if err:

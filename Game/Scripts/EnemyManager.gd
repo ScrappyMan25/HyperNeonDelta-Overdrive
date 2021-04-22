@@ -21,9 +21,11 @@ func _ready() -> void:
 	Enemies.shuffle()
 	Player = get_parent().get_node("Player")
 	add_enemy()
+	$Timer.start()
 	pass # Replace with function body.
 
 func add_enemy():
+	$Timer.paused = true
 	while true:
 		var t : Vector2 = Vector2(rand_range(-get_viewport_rect().size.x/2 + 10, get_viewport_rect().size.x/2 - 10), rand_range(-get_viewport_rect().size.y/2 +10, get_viewport_rect().size.y/2 - 10))
 		if (t.x < Player.position.x + 5 || t.x < Player.position.x - 5) && (t.y < Player.position.y + 5 || t.x < Player.position.y - 5):
@@ -37,8 +39,18 @@ func add_enemy():
 	pass
 
 func enemy_destroyed():
-	if get_child_count() == 1:
+	Player.score += 100
+	if get_child_count() == 2:
+		Player.score += 10* $Timer.time_left
+		$Timer.wait_time = $Timer.time_left + 10.0
+		$Timer.start()
 		count+=1
 		for _i in range(count):
 			add_enemy()
 	pass
+
+
+func _on_Timer_timeout() -> void:
+	print("GAMEOVER ARRY!")
+	get_parent().get_node("User Interface")._Game_Over()
+	pass # Replace with function body.

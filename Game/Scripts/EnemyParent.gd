@@ -83,7 +83,7 @@ func _on_ShootTimer_timeout() -> void:
 		bullet.position = s.global_position 
 		bullet.rotation = s.global_rotation
 		bullet.get_node("Sprite").modulate = sprite.modulate
-		get_parent().get_parent().add_child(bullet) #add the bullet to the root
+		get_parent().get_parent().get_node("Bullets").add_child(bullet) #add the bullet to the root
 		#set bullet position and rotation to match spawn points
 
 func _on_Animation_Frame_Changed():
@@ -93,6 +93,7 @@ func _on_Animation_Frame_Changed():
 	pass
 
 func _on_Animation_finished():
+	get_parent().get_node("Timer").paused = false
 	animated_sprite.hide()
 	sprite.modulate.a8 = 255
 	sprite.show()

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var target
 export var trailLength = 32

@@ -52,4 +52,5 @@ shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Redirector/PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_exited" from="Redirector/PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]
+[connection signal="area_entered" from="EnemyHitDetector" to="." method="_on_EnemyHitDetector_area_entered"]
 [connection signal="body_entered" from="EnemyHitDetector" to="." method="_on_EnemyHitDetector_body_entered"]
