@@ -106,7 +106,7 @@ func _on_Quit_pressed():
 	pass # Replace with function body.
 
 
-func _on_FadeIn_animation_finished(anim_name):
+func _on_FadeIn_animation_finished(_anim_name):
 	$GameOverFade.hide()
 	$Timer.queue_free()
 	get_parent().get_node("BG/Background").hide()
@@ -115,6 +115,7 @@ func _on_FadeIn_animation_finished(anim_name):
 	get_parent().get_node("Ball").queue_free()
 	get_parent().get_node("Trail").hide()
 	get_parent().get_node("Bullets").queue_free()
+	get_parent().get_node("Particles").queue_free()
 	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
 	
 	$Score.hide()

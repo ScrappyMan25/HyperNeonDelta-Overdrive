@@ -12,6 +12,8 @@ func _on_Bullet_body_entered(body: Node) -> void:
 		pass
 	elif "Enemy" in body.name:
 		pass
+	else:
+		queue_free()
 	pass # Replace with function body.
 
 func _on_KillTimer_timeout() -> void:

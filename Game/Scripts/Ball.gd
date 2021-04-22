@@ -61,7 +61,7 @@ func _on_EnemyHitDetector_body_entered(body: Node) -> void:
 		body.hit()
 		var K = kill_animation.instance()
 		K.particle_emit(body.modulate, position)
-		get_parent().add_child(K)
+		get_parent().get_node("Particles").add_child(K)
 	pass # Replace with function body.
 
 
