@@ -87,4 +87,3 @@ texture = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.513726, 0.0156863, 0.580392, 1 )
 frames = SubResource( 12 )
-frame = 8

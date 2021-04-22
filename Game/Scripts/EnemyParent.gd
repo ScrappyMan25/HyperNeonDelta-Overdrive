@@ -13,6 +13,8 @@ export(int) var radius = 100
 
 var shoot_timer
 var rotator
+var animated_sprite
+var sprite
 
 var is_ready : bool = false
 
@@ -25,6 +27,10 @@ func _ready() -> void:
 	direction = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	shoot_timer = get_node("ShootTimer")
 	rotator = get_node("Rotator")
+	animated_sprite = get_node("AnimatedSprite")
+	sprite = get_node("Sprite")
+	sprite.show()
+	sprite.modulate.a8 = 0
 	
 	var step = 2 * PI / spawn_point_count #sets equal distance between each spawn point
 	for i in range(spawn_point_count):
@@ -36,7 +42,10 @@ func _ready() -> void:
 	
 	shoot_timer.connect("timeout", self, "_on_ShootTimer_timeout")
 	shoot_timer.wait_time = shooter_timer_wait_time
-#	shoot_timer.start()
+	
+	animated_sprite.play("default")
+	animated_sprite.connect("animation_finished", self, "_on_Animation_finished")
+	animated_sprite.connect("frame_changed", self, "_on_Animation_Frame_Changed")
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,17 +66,36 @@ func bounce(collision : KinematicCollision2D):
 	pass
 
 func hit():
-	emit_signal("destroyed")
-	queue_free()
+	if is_ready:
+		emit_signal("destroyed")
+		queue_free()
 	pass
 
 func movement(_delta: float) -> KinematicCollision2D:
-	return move_and_collide(direction * velocity * _delta)
+	if is_ready:
+		return move_and_collide(direction * velocity * _delta)
+	else:
+		return move_and_collide(Vector2.ZERO)
 
 func _on_ShootTimer_timeout() -> void:
 	for s in rotator.get_children():
 		var bullet = bullet_scene.instance() #create a bullet
-		get_tree().root.add_child(bullet) #add the bullet to the root
-		#set bullet position and rotation to match spawn points
 		bullet.position = s.global_position 
 		bullet.rotation = s.global_rotation
+		bullet.get_node("Sprite").modulate = sprite.modulate
+		get_parent().get_parent().add_child(bullet) #add the bullet to the root
+		#set bullet position and rotation to match spawn points
+
+func _on_Animation_Frame_Changed():
+	if !is_ready:
+		sprite.modulate.a8 += 17
+		sprite.visible = !sprite.visible
+	pass
+
+func _on_Animation_finished():
+	animated_sprite.hide()
+	sprite.modulate.a8 = 255
+	sprite.show()
+	is_ready = true
+	shoot_timer.start()
+	pass

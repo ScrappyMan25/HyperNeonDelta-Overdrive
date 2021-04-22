@@ -78,6 +78,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.870588, 0.203922, 0.901961, 1 )
 texture = ExtResource( 2 )
 
