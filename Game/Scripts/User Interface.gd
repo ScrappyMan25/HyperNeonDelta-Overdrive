@@ -77,6 +77,7 @@ func updateScore(score: int):
 
 func _Game_Over():
 	Game_is_over = true
+	SoundScene.get_node("GameOver").play()
 	Engine.time_scale = 1.0
 	$GameOverFade.show()
 	$GameOverFade/FadeIn.play("GameOverFade")

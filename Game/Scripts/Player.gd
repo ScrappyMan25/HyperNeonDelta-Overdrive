@@ -71,6 +71,7 @@ func apply_movement(a):
 func player_hit():
 	if !invulnerable:
 		invulnerable = true
+		SoundScene.get_node("PlayerHit").play()
 		$AnimatedSprite.show()
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.play("default")

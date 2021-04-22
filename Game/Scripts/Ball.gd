@@ -29,6 +29,7 @@ func _process(_delta: float) -> void:
 		$Redirector/AOE.look_at(get_global_mouse_position())
 		if Input.is_action_just_pressed("ui_select"):
 			Engine.time_scale = 1
+			SoundScene.get_node("PlayerShoot").play()
 			direction = (-position + get_global_mouse_position()).normalized()
 			velocity = VELOCITY
 			get_parent().get_node("Camera2D").add_trauma(0.2)
