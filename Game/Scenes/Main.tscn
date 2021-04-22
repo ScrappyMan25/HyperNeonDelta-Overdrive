@@ -1,55 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/GameAssets/Background/ArenaBorder.png" type="Texture" id=6]
-[ext_resource path="res://Assets/GameAssets/Background/Background.png" type="Texture" id=7]
-[ext_resource path="res://Assets/GameAssets/Background/BackgroundColour.png" type="Texture" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 280 )
+[ext_resource path="res://Scenes/BG.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/User Interface.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node"]
 
-[node name="BG" type="Node2D" parent="."]
+[node name="WorldEnvironment" parent="." instance=ExtResource( 6 )]
 
-[node name="BackgroundColour" type="Sprite" parent="BG"]
-texture = ExtResource( 8 )
+[node name="BG" parent="." instance=ExtResource( 5 )]
 
-[node name="Background" type="Sprite" parent="BG"]
-texture = ExtResource( 7 )
-
-[node name="ArenaBorder" type="Sprite" parent="BG"]
-texture = ExtResource( 6 )
-
-[node name="Barrier" type="StaticBody2D" parent="BG"]
-position = Vector2( 0, -288 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/Barrier"]
-shape = SubResource( 1 )
-
-[node name="Barrier2" type="StaticBody2D" parent="BG"]
-position = Vector2( 0, 288 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/Barrier2"]
-shape = SubResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BG"]
-position = Vector2( -512, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/StaticBody2D"]
-shape = SubResource( 2 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="BG"]
-position = Vector2( 512, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/StaticBody2D2"]
-shape = SubResource( 2 )
+[node name="User Interface" parent="." instance=ExtResource( 7 )]
 
 [node name="Trail" parent="." instance=ExtResource( 1 )]
 
