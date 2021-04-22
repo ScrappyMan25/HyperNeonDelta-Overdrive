@@ -5,7 +5,10 @@
 [ext_resource path="res://Scenes/EnemyManager.tscn" type="PackedScene" id=3]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=4]
+=======
+>>>>>>> parent of bf3883d (UI, SplashScreen, TitleScreen)
 =======
 >>>>>>> parent of bf3883d (UI, SplashScreen, TitleScreen)
 =======
@@ -27,8 +30,11 @@ extents = Vector2( 527.313, 10 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [node name="Trail" parent="." instance=ExtResource( 4 )]
+=======
+>>>>>>> parent of bf3883d (UI, SplashScreen, TitleScreen)
 =======
 >>>>>>> parent of bf3883d (UI, SplashScreen, TitleScreen)
 
