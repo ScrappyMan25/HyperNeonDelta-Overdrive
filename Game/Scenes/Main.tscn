@@ -40,3 +40,5 @@ position = Vector2( -504, -280 )
 
 [node name="BottomRight" type="Node2D" parent="."]
 position = Vector2( 504, 280 )
+
+[node name="Particles" type="Node2D" parent="."]

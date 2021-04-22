@@ -27,6 +27,7 @@ func _process(_delta: float) -> void:
 			Engine.time_scale = 1
 			direction = (-position + get_global_mouse_position()).normalized()
 			velocity = VELOCITY
+			get_parent().get_node("Camera2D").add_trauma(0.35)
 			pass
 		pass
 	else:
@@ -58,10 +59,11 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 
 func _on_EnemyHitDetector_body_entered(body: Node) -> void:
 	if "Enemy" in body.name && body.is_ready:
+		get_parent().get_node("Camera2D").add_trauma(0.25)
 		body.hit()
 		var K = kill_animation.instance()
 		K.particle_emit(body.modulate, position)
-		get_parent().add_child(K)
+		get_parent().get_node("Particles").add_child(K)
 	pass # Replace with function body.
 
 
