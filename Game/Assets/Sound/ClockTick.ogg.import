@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ClockTick.ogg-a0e419d62f6ea9e982c5a84b2dd76b5e.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

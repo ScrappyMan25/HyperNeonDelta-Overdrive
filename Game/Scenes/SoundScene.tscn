@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Sound/Neon Delta Game Music.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Sound/Ricochet.ogg" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sound/GameOver.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sound/Collide_with_Enemy2.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sound/Player_hit2.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Sound/ClockTick.ogg" type="AudioStream" id=9]
 
 [node name="SoundScene" type="Node"]
 
@@ -38,4 +39,8 @@ volume_db = -10.0
 
 [node name="PlayerHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="ClockTick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 volume_db = -10.0
