@@ -11,6 +11,7 @@ export(float) var ACCELERATION: float = 5000
 export(float) var MAX_SPEED : float = 400
 export(float) var FRICTION : float = 4000
 var motion = Vector2()
+var invulnerable = false
 
 #for Dash
 #var num_dash = 1
@@ -68,11 +69,17 @@ func apply_movement(a):
 	pass
 
 func player_hit():
-	get_parent().get_node("Camera2D").add_trauma(0.15)
-	Player_Health -= 1
-	if Player_Health < 1:
-		get_parent().get_node("User Interface")._Game_Over()
-		pass
+	if !invulnerable:
+		invulnerable = true
+		$AnimatedSprite.show()
+		$AnimatedSprite.frame = 0
+		$AnimatedSprite.play("default")
+		$Sprite.modulate.a8 = 0
+		get_parent().get_node("Camera2D").add_trauma(0.15)
+		Player_Health -= 1
+		if Player_Health < 1:
+			get_parent().get_node("User Interface")._Game_Over()
+			pass
 	pass
 
 func dash():
@@ -92,3 +99,19 @@ func _on_DashTimer_timeout() -> void: #how long dash lasts
 func _on_DashCooldownTimer_timeout() -> void:
 	can_dash = true
 	pass
+
+
+func _on_AnimatedSprite_animation_finished() -> void:
+	$AnimatedSprite.hide()
+	$AnimatedSprite.stop()
+	$Sprite.show()
+	$Sprite.modulate.a8 = 255
+	invulnerable = false
+	pass # Replace with function body.
+
+
+func _on_AnimatedSprite_frame_changed() -> void:
+	if $AnimatedSprite.playing:
+		$Sprite.visible = !$Sprite.visible
+		$Sprite.modulate.a8 += 17
+	pass # Replace with function body.

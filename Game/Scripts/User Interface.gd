@@ -53,6 +53,11 @@ func _process(_delta: float) -> void:
 		else:
 			_Pause_Game()
 	updateScore(Player.score)
+	updateHealth(Player.Player_Health)
+	pass
+
+func updateHealth(health: int):
+	$PlayerHealth/PlayerHealthLabel.text = health as String
 	pass
 
 func updateScore(score: int):
@@ -72,6 +77,7 @@ func updateScore(score: int):
 
 func _Game_Over():
 	Game_is_over = true
+	Engine.time_scale = 1.0
 	$GameOverFade.show()
 	$GameOverFade/FadeIn.play("GameOverFade")
 	$Timer/ClockAnimation.stop()
@@ -114,6 +120,7 @@ func _on_FadeIn_animation_finished(_anim_name):
 	get_parent().get_node("Camera2D").zoom = Vector2(1.0,1.0)
 	get_parent().get_node("Camera2D").rotation = 0
 	get_parent().get_node("Camera2D").offset = Vector2.ZERO
+	$PlayerHealth.hide()
 	$GameOverFade.hide()
 	$Timer.queue_free()
 	get_parent().get_node("BG/Background").hide()
