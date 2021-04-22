@@ -6,7 +6,6 @@ const bullet_scene = preload("res://Scenes/Bullet.tscn")
 export var velocity : int = 0
 export var direction : Vector2 = Vector2.ZERO
 
-
 export(int) var rotate_speed: int = 100
 export(float) var shooter_timer_wait_time: float = 0.2
 export(int) var spawn_point_count: int = 2
@@ -14,6 +13,10 @@ export(int) var radius = 100
 
 var shoot_timer
 var rotator
+
+var is_ready : bool = false
+
+signal destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +36,7 @@ func _ready() -> void:
 	
 	shoot_timer.connect("timeout", self, "_on_ShootTimer_timeout")
 	shoot_timer.wait_time = shooter_timer_wait_time
-	shoot_timer.start()
+#	shoot_timer.start()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,18 +57,12 @@ func bounce(collision : KinematicCollision2D):
 	pass
 
 func hit():
-	get_parent().remove_enemy(self)
+	emit_signal("destroyed")
+	queue_free()
 	pass
 
 func movement(_delta: float) -> KinematicCollision2D:
 	return move_and_collide(direction * velocity * _delta)
-
-func test():
-	print("This is called from the EnemyParent Script")
-	pass
-
-func shoot_bullets():
-	pass
 
 func _on_ShootTimer_timeout() -> void:
 	for s in rotator.get_children():
