@@ -74,11 +74,9 @@ spawn_point_count = 7
 radius = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0.870588, 0.203922, 0.901961, 1 )
 texture = ExtResource( 2 )
 

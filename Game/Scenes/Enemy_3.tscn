@@ -77,7 +77,6 @@ radius = 32
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0.956863, 1, 0.160784, 1 )
 texture = ExtResource( 2 )
 

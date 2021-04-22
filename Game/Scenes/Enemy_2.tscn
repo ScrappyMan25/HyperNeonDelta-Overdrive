@@ -78,7 +78,7 @@ radius = 32
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.0627451, 0.933333, 1, 1 )
+modulate = Color( 0.305882, 1, 0.160784, 1 )
 texture = ExtResource( 2 )
 
 [node name="ShootTimer" type="Timer" parent="."]
@@ -86,5 +86,5 @@ texture = ExtResource( 2 )
 [node name="Rotator" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.0627451, 0.933333, 1, 1 )
+modulate = Color( 0.305882, 1, 0.160784, 1 )
 frames = SubResource( 12 )
