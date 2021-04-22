@@ -71,6 +71,7 @@ func apply_movement(a):
 func player_hit():
 	if !invulnerable:
 		invulnerable = true
+		SoundScene.get_node("PlayerHit").play()
 		$AnimatedSprite.show()
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.play("default")
@@ -100,7 +101,6 @@ func _on_DashCooldownTimer_timeout() -> void:
 	can_dash = true
 	pass
 
-
 func _on_AnimatedSprite_animation_finished() -> void:
 	$AnimatedSprite.hide()
 	$AnimatedSprite.stop()
@@ -108,7 +108,6 @@ func _on_AnimatedSprite_animation_finished() -> void:
 	$Sprite.modulate.a8 = 255
 	invulnerable = false
 	pass # Replace with function body.
-
 
 func _on_AnimatedSprite_frame_changed() -> void:
 	if $AnimatedSprite.playing:

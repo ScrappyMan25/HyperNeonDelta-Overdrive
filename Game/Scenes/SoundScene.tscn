@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sound/Neon Delta Game Music.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Sound/Ricochet.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Sound/DestroyEnemy.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Sound/Dash.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sound/SlowDownTime3.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/Player_Shoot2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sound/GameOver.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sound/Collide_with_Enemy2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sound/Player_hit2.ogg" type="AudioStream" id=8]
 
 [node name="SoundScene" type="Node"]
 
@@ -20,7 +23,19 @@ stream = ExtResource( 4 )
 
 [node name="DestroyEnemy" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
-[node name="SlowDownTime" type="AudioStreamPlayer" parent="."]
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PlayerShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="EnemyCollide" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 volume_db = -10.0

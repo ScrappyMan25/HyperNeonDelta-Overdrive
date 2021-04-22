@@ -53,113 +53,112 @@ font_data = ExtResource( 3 )
 size = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 640, 0, 320, 64 )
 
-[sub_resource type="SpriteFrames" id=34]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=35]
+[sub_resource type="DynamicFont" id=15]
 size = 40
 font_data = ExtResource( 3 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 256, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 320, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 384, 0, 64, 64 )
+region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 448, 0, 64, 64 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 512, 0, 64, 64 )
+region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 576, 0, 64, 64 )
+region = Rect2( 384, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 640, 0, 64, 64 )
+region = Rect2( 448, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 704, 0, 64, 64 )
+region = Rect2( 512, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 768, 0, 64, 64 )
+region = Rect2( 576, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 832, 0, 64, 64 )
+region = Rect2( 640, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 896, 0, 64, 64 )
+region = Rect2( 704, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 4 )
+region = Rect2( 768, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 832, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 896, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 4 )
 region = Rect2( 960, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=29]
+[sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=30]
-resource_name = "GameOverFade"
+[sub_resource type="Animation" id=33]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -368,7 +367,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PlayerHealth"]
 position = Vector2( -3, 15 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 34 )
+frames = SubResource( 14 )
 flip_h = true
 
 [node name="PlayerHealthLabel" type="Label" parent="PlayerHealth"]
@@ -379,7 +378,7 @@ anchor_bottom = 0.5
 margin_left = -78.0
 margin_top = -18.0
 margin_bottom = 19.0
-custom_fonts/font = SubResource( 35 )
+custom_fonts/font = SubResource( 15 )
 text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -418,7 +417,7 @@ __meta__ = {
 [node name="ClockAnimation" type="AnimatedSprite" parent="Timer"]
 position = Vector2( 8.31857, 0 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 29 )
+frames = SubResource( 32 )
 centered = false
 
 [node name="GameOverFade" type="ColorRect" parent="."]
@@ -432,7 +431,7 @@ __meta__ = {
 }
 
 [node name="FadeIn" type="AnimationPlayer" parent="GameOverFade"]
-anims/GameOverFade = SubResource( 30 )
+anims/GameOverFade = SubResource( 33 )
 
 [connection signal="pressed" from="PauseMenu/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="PauseMenu/Restart" to="." method="_on_Restart_pressed"]

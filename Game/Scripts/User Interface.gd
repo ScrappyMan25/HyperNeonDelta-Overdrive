@@ -57,7 +57,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func updateHealth(health: int):
-	$PlayerHealth/PlayerHealthLabel.text = health as String
+	$PlayerHealth/PlayerHealthLabel.text = max(health, 0) as String
 	pass
 
 func updateScore(score: int):
@@ -77,6 +77,7 @@ func updateScore(score: int):
 
 func _Game_Over():
 	Game_is_over = true
+	SoundScene.get_node("GameOver").play()
 	Engine.time_scale = 1.0
 	$GameOverFade.show()
 	$GameOverFade/FadeIn.play("GameOverFade")
