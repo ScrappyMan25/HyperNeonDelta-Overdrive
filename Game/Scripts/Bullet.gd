@@ -8,6 +8,7 @@ func _process(delta):
 func _on_Bullet_body_entered(body: Node) -> void:
 	if "Player" in body.name:
 		body.call_deferred("player_hit")
+		queue_free()
 		pass
 	elif "Enemy" in body.name:
 		pass
