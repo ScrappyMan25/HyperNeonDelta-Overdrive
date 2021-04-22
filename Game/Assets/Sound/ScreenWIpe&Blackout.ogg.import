@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ScreenWIpe&Blackout.ogg-9033927aa1afbc0cc555bdaf52b4
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

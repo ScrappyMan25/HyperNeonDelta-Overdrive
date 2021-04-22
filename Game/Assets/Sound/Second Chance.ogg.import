@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Second Chance.ogg-6003361eacd7181225f32936f01004b1.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

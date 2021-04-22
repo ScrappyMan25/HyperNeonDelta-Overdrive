@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ScoreMultiplier.ogg-cc427ff52d49a1c72ffb0dc59aac37a9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Reflect Shield Power Up.ogg-c74fdfbd96c2870f4cffeb63
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
