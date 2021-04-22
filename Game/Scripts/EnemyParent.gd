@@ -23,6 +23,9 @@ signal destroyed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
+	
+	radius = 32
+	
 	velocity = 200
 	direction = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	shoot_timer = get_node("ShootTimer")

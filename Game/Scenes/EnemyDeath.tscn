@@ -23,5 +23,7 @@ scale_amount = 0.2
 color_ramp = SubResource( 1 )
 
 [node name="ParticlesEnd" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="ParticlesEnd" to="." method="_on_Timer_timeout"]
