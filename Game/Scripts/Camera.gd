@@ -40,7 +40,7 @@ func add_trauma(amount) -> void:
 func shake():
 	var amount = pow(ScreenShake.trauma, ScreenShake.trauma_power)
 	noise_y += 1
-	$Camera2D.rotation = ScreenShake.max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
-	$Camera2D.offset.x = ScreenShake.max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
-	$Camera2D.offset.y = ScreenShake.max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
+	rotation = ScreenShake.max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
+	offset.x = ScreenShake.max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
+	offset.y = ScreenShake.max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
 	pass

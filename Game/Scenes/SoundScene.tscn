@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Sound/Neon Delta Game Music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sound/Ricochet.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Sound/DestroyEnemy.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sound/Dash.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound/SlowDownTime3.ogg" type="AudioStream" id=5]
+
+[node name="SoundScene" type="Node"]
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -20.0
+
+[node name="Ricochet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="Dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="DestroyEnemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SlowDownTime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )

@@ -5,7 +5,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	var err = get_tree().change_scene("res://Scenes/TitleScreen.tscn")
 	if err:
 		print(err)

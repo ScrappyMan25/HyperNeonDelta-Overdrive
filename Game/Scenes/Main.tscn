@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Trail.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,14 +8,13 @@
 [ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/User Interface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SoundScene.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node"]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource( 6 )]
 
 [node name="BG" parent="." instance=ExtResource( 5 )]
-
-[node name="User Interface" parent="." instance=ExtResource( 7 )]
 
 [node name="Trail" parent="." instance=ExtResource( 1 )]
 
@@ -25,9 +24,13 @@ position = Vector2( 8, 32 )
 [node name="Ball" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -104 )
 
+[node name="Bullets" type="Node2D" parent="."]
+
 [node name="EnemyManager" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera2D" parent="." instance=ExtResource( 8 )]
 zoom = Vector2( 1.2, 1.2 )
 
-[node name="Bullets" type="Node2D" parent="."]
+[node name="SoundScene" parent="." instance=ExtResource( 9 )]
+
+[node name="User Interface" parent="." instance=ExtResource( 7 )]
