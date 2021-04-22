@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0, 0.0126582, 1 )
+offsets = PoolRealArray( 0, 0.0126582, 2.05124e-15 )
 colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.403922 )
 
 [node name="EnemyParticles" type="CPUParticles2D"]

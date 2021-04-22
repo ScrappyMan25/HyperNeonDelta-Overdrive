@@ -42,10 +42,10 @@ func save_highscore():
 func _process(_delta: float) -> void:
 	if !Game_is_over:
 		$Timer/Time.text = stepify(EnemyManager_Timer.time_left,0.01) as String
-	if EnemyManager_Timder.paused && !Game_is_over:
-		$Timer/ClockAnimation.stop()
-	else:
-		$Timer/ClockAnimation.play()
+		if EnemyManager_Timer.paused:
+			$Timer/ClockAnimation.stop()
+		else:
+			$Timer/ClockAnimation.play()
 	updateScore(Player.score)
 	pass
 
