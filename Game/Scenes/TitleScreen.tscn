@@ -7,7 +7,13 @@
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sound/Neon Delta Menu Music.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sound/Select2.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Scenes/WorldEnvironment.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Environment" id=4]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 1.34
+glow_strength = 1.39
+glow_blend_mode = 0
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -42,9 +48,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorldEnvironment" parent="." instance=ExtResource( 8 )]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
+visible = false
 modulate = Color( 0.992157, 0.105882, 1, 0.686275 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,7 +62,7 @@ __meta__ = {
 }
 
 [node name="ArenaBorder" type="TextureRect" parent="."]
-modulate = Color( 0.113725, 0.968627, 0.972549, 0.823529 )
+modulate = Color( 0.113725, 0.968627, 0.972549, 0.862745 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
@@ -108,6 +116,7 @@ text = "EXIT"
 flat = true
 
 [node name="Logo" type="TextureRect" parent="HBoxContainer"]
+modulate = Color( 1, 1, 1, 0.823529 )
 light_mask = 0
 margin_left = 512.0
 margin_right = 1024.0
