@@ -42,6 +42,7 @@ func bounce(collision : KinematicCollision2D):
 
 func _on_PlayerDetector_body_entered(body: Node) -> void:
 	if "Player" in body.name :
+		get_parent().get_node("SoundScene/GameMusic").pitch_scale = 0.5
 		$Redirector/AOE.show()
 		in_area = true
 		Engine.time_scale = 0.05
@@ -50,6 +51,7 @@ func _on_PlayerDetector_body_entered(body: Node) -> void:
 
 func _on_PlayerDetector_body_exited(body: Node) -> void:
 	if "Player" in body.name:
+		get_parent().get_node("SoundScene/GameMusic").pitch_scale = 1
 		$Redirector/AOE.hide()
 		in_area = false
 		Engine.time_scale = 1

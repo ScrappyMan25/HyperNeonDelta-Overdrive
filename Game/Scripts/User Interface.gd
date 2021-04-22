@@ -111,15 +111,19 @@ func _on_Quit_pressed():
 
 
 func _on_FadeIn_animation_finished(_anim_name):
+	get_parent().get_node("Camera2D").zoom = Vector2(1.0,1.0)
+	get_parent().get_node("Camera2D").rotation = 0
+	get_parent().get_node("Camera2D").offset = Vector2.ZERO
 	$GameOverFade.hide()
 	$Timer.queue_free()
 	get_parent().get_node("BG/Background").hide()
 	get_parent().get_node("Player").hide()
 	get_parent().get_node("EnemyManager").queue_free()
-	get_parent().get_node("Ball").queue_free()
-	get_parent().get_node("Trail").hide()
 	get_parent().get_node("Bullets").queue_free()
 	get_parent().get_node("Particles").queue_free()
+	for ball in get_parent().get_children():
+		if "Ball" in ball.name:
+			ball.queue_free()
 	get_parent().get_node("BG/ArenaBorder").modulate = Color("dcff0101")
 	
 	$Score.hide()
