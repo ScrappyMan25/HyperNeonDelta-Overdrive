@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func add_enemy():
 	while true:
-		var t : Vector2 = Vector2(rand_range(0+10, get_viewport_rect().size.x - 10), rand_range(0+10, get_viewport_rect().size.y - 10))
+		var t : Vector2 = Vector2(rand_range(-get_viewport_rect().size.x/2 + 10, get_viewport_rect().size.x/2 - 10), rand_range(-get_viewport_rect().size.y/2 +10, get_viewport_rect().size.y/2 - 10))
 		if (t.x < Player.position.x + 5 || t.x < Player.position.x - 5) && (t.y < Player.position.y + 5 || t.x < Player.position.y - 5):
 			var e = Enemy.instance()
 			e.position = t

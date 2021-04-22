@@ -1,7 +1,7 @@
 extends Control
 
 var scene_to_load : PackedScene
-var GameScene : PackedScene = preload("res://Scenes/Test.tscn")
+var GameScene : PackedScene = preload("res://Scenes/Main.tscn")
 
 func _ready():
 	get_tree().paused = false
