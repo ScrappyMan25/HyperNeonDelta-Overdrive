@@ -5,6 +5,8 @@ const VELOCITY : int = 2500
 var direction : Vector2 = Vector2.ZERO
 var in_area : bool = false
 
+var kill_animation = preload("res://Scenes/EnemyDeath.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	direction = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
@@ -55,8 +57,11 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 
 
 func _on_EnemyHitDetector_body_entered(body: Node) -> void:
-	if "Enemy" in body.name:
+	if "Enemy" in body.name && body.is_ready:
 		body.hit()
+		var K = kill_animation.instance()
+		K.particle_emit(body.modulate, position)
+		get_parent().add_child(K)
 	pass # Replace with function body.
 
 

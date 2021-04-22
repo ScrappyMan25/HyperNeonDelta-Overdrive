@@ -1,9 +1,15 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0126582, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.403922 )
 
 [node name="EnemyParticles" type="CPUParticles2D"]
 emitting = false
-amount = 60
+amount = 100
 one_shot = true
+explosiveness = 0.85
+randomness = 0.5
 emission_shape = 1
 emission_sphere_radius = 0.01
 direction = Vector2( 0, 0 )
@@ -14,4 +20,4 @@ initial_velocity_random = 0.25
 linear_accel = 15.0
 linear_accel_random = 1.0
 scale_amount = 5.0
-color = Color( 0.290196, 0.298039, 0.964706, 0.705882 )
+color_ramp = SubResource( 1 )

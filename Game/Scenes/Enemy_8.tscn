@@ -71,13 +71,13 @@ collision_layer = 131072
 script = ExtResource( 1 )
 shooter_timer_wait_time = 0.3
 spawn_point_count = 6
-radius = 32
+radius = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.513726, 1, 0.933333, 1 )
+modulate = Color( 0.470588, 0.905882, 0.847059, 1 )
 texture = ExtResource( 2 )
 
 [node name="ShootTimer" type="Timer" parent="."]
@@ -85,5 +85,5 @@ texture = ExtResource( 2 )
 [node name="Rotator" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.513726, 1, 0.933333, 1 )
+modulate = Color( 0.470588, 0.905882, 0.847059, 1 )
 frames = SubResource( 12 )
