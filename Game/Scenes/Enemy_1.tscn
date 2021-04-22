@@ -1,60 +1,60 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/EnemyParent.gd" type="Script" id=1]
-[ext_resource path="res://Assets/GameAssets/Enemies/New/Hexagon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/GameAssets/Enemies/Old/EnemyAnimation/HexagonFlicker-sheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GameAssets/Enemies/Old/EnemyAnimation/SquareFlicker-sheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GameAssets/Enemies/New/Square.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 448, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 512, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 576, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 640, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 768, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 896, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 960, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=12]
@@ -65,26 +65,26 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[node name="Enemy_3" type="KinematicBody2D"]
+[node name="Enemy_1" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
 collision_layer = 131072
 script = ExtResource( 1 )
-shooter_timer_wait_time = 0.6
-spawn_point_count = 6
+shooter_timer_wait_time = 0.8
+spawn_point_count = 8
 radius = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 0.956863, 1, 0.160784, 1 )
-texture = ExtResource( 2 )
+modulate = Color( 0.290196, 0.298039, 0.964706, 1 )
+texture = ExtResource( 3 )
 
 [node name="ShootTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="Rotator" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.956863, 1, 0.160784, 1 )
+modulate = Color( 0.290196, 0.298039, 0.964706, 1 )
 frames = SubResource( 12 )
+frame = 2
