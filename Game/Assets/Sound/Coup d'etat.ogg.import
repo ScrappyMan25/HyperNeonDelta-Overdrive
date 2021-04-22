@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Coup d'etat.ogg-9a929cf1f619d43ed361c674c122e6b3.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
