@@ -57,7 +57,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func updateHealth(health: int):
-	$PlayerHealth/PlayerHealthLabel.text = health as String
+	$PlayerHealth/PlayerHealthLabel.text = max(health, 0) as String
 	pass
 
 func updateScore(score: int):
