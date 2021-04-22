@@ -1,14 +1,14 @@
 extends Node2D
 
 var Enemies = [
-#	preload("res://Scenes/Enemy_1.tscn"),
-#	preload("res://Scenes/Enemy_2.tscn"),
-#	preload("res://Scenes/Enemy_3.tscn"),
-#	preload("res://Scenes/Enemy_4.tscn"),
-#	preload("res://Scenes/Enemy_5.tscn"),
-#	preload("res://Scenes/Enemy_6.tscn"),
-#	preload("res://Scenes/Enemy_7.tscn"),
-#	preload("res://Scenes/Enemy_8.tscn"),
+	preload("res://Scenes/Enemy_1.tscn"),
+	preload("res://Scenes/Enemy_2.tscn"),
+	preload("res://Scenes/Enemy_3.tscn"),
+	preload("res://Scenes/Enemy_4.tscn"),
+	preload("res://Scenes/Enemy_5.tscn"),
+	preload("res://Scenes/Enemy_6.tscn"),
+	preload("res://Scenes/Enemy_7.tscn"),
+	preload("res://Scenes/Enemy_8.tscn"),
 	preload("res://Scenes/Enemy_9.tscn")
 	
 ]
