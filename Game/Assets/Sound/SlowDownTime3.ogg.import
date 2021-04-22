@@ -11,5 +11,5 @@ dest_files=[ "res://.import/SlowDownTime3.ogg-2deecfdc1d4d0142e18877b0749e566d.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
