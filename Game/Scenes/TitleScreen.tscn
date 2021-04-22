@@ -8,23 +8,22 @@
 [ext_resource path="res://Assets/Sound/Neon Delta Menu Music.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sound/Select2.ogg" type="AudioStream" id=7]
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
 glow_intensity = 1.34
 glow_strength = 1.39
 glow_blend_mode = 0
 
-[sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 3 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 100
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "FadeIn"
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -49,7 +48,7 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
+environment = SubResource( 1 )
 
 [node name="Background" type="TextureRect" parent="."]
 visible = false
@@ -70,61 +69,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Logo" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.823529 )
+light_mask = 0
+anchor_left = 0.51
+anchor_top = 0.359
+anchor_right = 0.51
+anchor_bottom = 0.359
+margin_left = -394.24
+margin_top = -419.784
+margin_right = 117.76
+margin_bottom = 156.216
+rect_scale = Vector2( 1.5, 1.5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 4 )
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Control" parent="HBoxContainer"]
-margin_right = 508.0
-margin_bottom = 576.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxButton" type="VBoxContainer" parent="HBoxContainer/Button"]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -133.5
-margin_right = 133.5
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Play" type="Button" parent="HBoxContainer/Button/VBoxButton"]
-margin_top = 188.0
-margin_right = 267.0
-margin_bottom = 286.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.00392157, 0.952941, 1, 1 )
+[node name="Play" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 448.0
+margin_right = 395.0
+margin_bottom = 546.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.192157, 1, 1 )
 text = "PLAY"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quit" type="Button" parent="HBoxContainer/Button/VBoxButton"]
-margin_top = 290.0
-margin_right = 267.0
-margin_bottom = 388.0
-custom_fonts/font = SubResource( 2 )
+[node name="Quit" type="Button" parent="."]
+margin_left = 630.0
+margin_top = 448.0
+margin_right = 897.0
+margin_bottom = 546.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "EXIT"
 flat = true
-
-[node name="Logo" type="TextureRect" parent="HBoxContainer"]
-modulate = Color( 1, 1, 1, 0.823529 )
-light_mask = 0
-margin_left = 512.0
-margin_right = 1024.0
-margin_bottom = 576.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 4 )
-stretch_mode = 4
 
 [node name="FadeIn" type="ColorRect" parent="."]
 visible = false
@@ -136,7 +122,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
-anims/FadeIn = SubResource( 3 )
+anims/FadeIn = SubResource( 4 )
 
 [node name="TitleScreenMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -146,6 +132,6 @@ volume_db = -20.0
 stream = ExtResource( 7 )
 volume_db = -10.0
 
-[connection signal="pressed" from="HBoxContainer/Button/VBoxButton/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button/VBoxButton/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="animation_finished" from="FadeIn/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

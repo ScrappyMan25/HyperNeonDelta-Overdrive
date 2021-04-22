@@ -22,15 +22,15 @@ size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 50
+size = 70
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 40
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 40
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -38,11 +38,11 @@ size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 70
+size = 85
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=10]
-size = 70
+size = 85
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=11]
@@ -242,10 +242,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -78.0
-margin_top = 122.5
-margin_right = 78.0
-margin_bottom = 175.5
+margin_left = -106.0
+margin_top = 107.5
+margin_right = 106.0
+margin_bottom = 178.5
 size_flags_horizontal = 9
 size_flags_vertical = 5
 custom_fonts/font = SubResource( 5 )
@@ -261,21 +261,24 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 175.0
 margin_top = -161.0
-margin_right = 299.0
+margin_right = 326.0
 margin_bottom = -108.0
 custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0.203922, 1, 1 )
+custom_colors/font_color = Color( 0, 1, 0.717647, 1 )
 text = "MENU"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Quit" type="Button" parent="GameOver"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -267.502
+margin_left = -299.0
 margin_top = -161.0
-margin_right = -173.502
+margin_right = -185.0
 margin_bottom = -108.0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -302,10 +305,10 @@ __meta__ = {
 [node name="Game" type="Label" parent="GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -196.247
-margin_top = 55.4374
-margin_right = 6.75348
-margin_bottom = 120.437
+margin_left = -248.0
+margin_top = 64.0
+margin_right = -2.0
+margin_bottom = 143.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "GAME"
@@ -316,11 +319,11 @@ __meta__ = {
 [node name="Over" type="Label" parent="GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 69.8156
-margin_top = 55.4374
-margin_right = 256.816
-margin_bottom = 120.437
-rect_rotation = 22.6311
+margin_left = 23.9999
+margin_top = 64.0
+margin_right = 251.0
+margin_bottom = 143.0
+rect_rotation = 12.3945
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "OVER"
@@ -421,6 +424,7 @@ frames = SubResource( 32 )
 centered = false
 
 [node name="GameOverFade" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -0.749146
