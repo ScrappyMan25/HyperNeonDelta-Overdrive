@@ -4,11 +4,15 @@ export (int) var velocity : int = 0
 const VELOCITY : int = 2500
 var direction : Vector2 = Vector2.ZERO
 var in_area : bool = false
+var SoundScene : Node
+var GameScene : Node
 
 var kill_animation = preload("res://Scenes/EnemyDeath.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameScene = get_parent()
+	SoundScene = GameScene.get_node("SoundScene")
 	direction = Vector2(rand_range(-1,1), rand_range(-1,1)).normalized()
 	pass # Replace with function body.
 
@@ -38,6 +42,7 @@ func _process(_delta: float) -> void:
 func bounce(collision : KinematicCollision2D):
 	if !(collision.collider is KinematicBody2D): 
 			direction = direction.bounce(collision.normal)
+			SoundScene.get_node("Ricochet").play()
 	pass
 
 func _on_PlayerDetector_body_entered(body: Node) -> void:
@@ -62,6 +67,7 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 func _on_EnemyHitDetector_body_entered(body: Node) -> void:
 	if "Enemy" in body.name && body.is_ready:
 		get_parent().get_node("Camera2D").add_trauma(0.10)
+		SoundScene.get_node("DestroyEnemy").play()
 		body.hit()
 		var K = kill_animation.instance()
 		K.particle_emit(body.modulate, position)
