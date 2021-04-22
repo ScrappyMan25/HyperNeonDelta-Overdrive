@@ -119,7 +119,7 @@ func _on_FadeIn_animation_finished(_anim_name):
 	get_parent().get_node("Camera2D").zoom = Vector2(1.0,1.0)
 	get_parent().get_node("Camera2D").rotation = 0
 	get_parent().get_node("Camera2D").offset = Vector2.ZERO
-	$PlayerHealth.queue_free()
+	$PlayerHealth.hide()
 	$GameOverFade.hide()
 	$Timer.queue_free()
 	get_parent().get_node("BG/Background").hide()
