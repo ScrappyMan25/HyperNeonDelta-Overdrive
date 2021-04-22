@@ -56,5 +56,5 @@ func _on_PlayerDetector_body_exited(body: Node) -> void:
 
 func _on_EnemyHitDetector_body_entered(body: Node) -> void:
 	if "Enemy" in body.name:
-		body.call_deferred("hit")
+		body.hit()
 	pass # Replace with function body.

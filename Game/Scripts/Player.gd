@@ -63,7 +63,7 @@ func apply_movement(a):
 
 func player_hit():
 	Player_Health -= 1
-	print("Player Health: " + (Player_Health as String))
+#	print("Player Health: " + (Player_Health as String))
 	pass
 
 func dash():
