@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GameAssets/Player/PlayerNew.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GameAssets/Player/Player..png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ null, ExtResource( 3 ), null, ExtResource( 3 ), null, ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), null, ExtResource( 3 ), null, ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
@@ -21,6 +30,7 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 rotation = 1.5708
 polygon = PoolVector2Array( -0.062149, -30.6902, -31.5266, 31.3023, 30.6531, 31.115 )
 
@@ -30,5 +40,12 @@ one_shot = true
 [node name="DashCooldownTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+rotation = 1.5708
+frames = SubResource( 1 )
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_DashCooldownTimer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
