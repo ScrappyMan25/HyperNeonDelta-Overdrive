@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Double Dash Pickup.ogg-b3388523bc88b9d5fb374c343b67e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
