@@ -57,7 +57,7 @@ func enemy_destroyed():
 		$Timer.start()
 		count+=1
 #		Extra Balls
-		if count % 5 == 0:
+		if count % 7 == 0:
 			var b = Ball.instance()
 			b.set_deferred("velocity", b.VELOCITY)
 			get_parent().call_deferred("add_child", b, true)

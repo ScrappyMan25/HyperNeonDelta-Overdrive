@@ -68,7 +68,7 @@ func apply_movement(a):
 	pass
 
 func player_hit():
-	get_parent().get_node("Camera2D").add_trauma(0.25)
+	get_parent().get_node("Camera2D").add_trauma(0.15)
 	Player_Health -= 1
 	if Player_Health < 1:
 		get_parent().get_node("User Interface")._Game_Over()
