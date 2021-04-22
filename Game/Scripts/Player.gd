@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 var Player_Health : int = 3
 var score : int  = 0
-
+var SoundScene : Node
+var GameScene : Node
 #Variables required for movement
 var velocity : Vector2 = Vector2.ZERO
 
@@ -20,6 +21,11 @@ export(float) var dash_cooldown : float = 1
 export(float) var dash_speed : float = 1200
 export(float) var dash_length : float = 0.1
 var dash_direction : Vector2
+
+func _ready():
+	GameScene = get_parent()
+	SoundScene = GameScene.get_node("SoundScene")
+	pass
 
 func _physics_process(delta):
 	if is_dashing == true:
@@ -73,6 +79,7 @@ func dash():
 	can_dash = false
 	is_dashing = true
 #	num_dash -= 1
+	SoundScene.get_node("Dash").play()
 	$DashTimer.start(dash_length)
 	$DashCooldownTimer.start(dash_cooldown)
 	dash_direction = Vector2.RIGHT.rotated(rotation) * dash_speed

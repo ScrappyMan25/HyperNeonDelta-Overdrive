@@ -3,11 +3,17 @@ var HighScore = 0
 var EnemyManager_Timer : Timer
 var Player
 
+var SoundScene : Node
+var GameScene : Node
+
 var Game_is_over : bool = false
 
 const filepath = "user://highscore.data"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameScene = get_parent()
+	SoundScene = GameScene.get_node("SoundScene")
+	SoundScene.get_node("GameMusic").play()
 	get_tree().paused = false
 	$PauseMenu.hide()
 	$GameOver.hide()
@@ -47,7 +53,7 @@ func updateScore(score: int):
 		$GameOver/NewHighScoreLabel.text = "NEW HIGH SCORE: "+ score as String
 		HighScore = score
 		save_highscore()
-	else:
+	elif score < HighScore && Game_is_over:
 		$GameOver/NewHighScoreLabel.hide()
 		$GameOver/Result.show()
 		$GameOver/Result/FinalScore.text = "SCORE: "+ score as String
