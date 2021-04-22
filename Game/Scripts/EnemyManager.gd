@@ -52,12 +52,13 @@ func enemy_destroyed():
 	$Timer.start()
 	Player.score += 100
 	if get_child_count() == 2:
-		Player.score += 10* $Timer.time_left
+		Player.score += 10 * $Timer.time_left
 		$Timer.wait_time = 10.0
 		$Timer.start()
 		count+=1
-#		Extra Balls
+#		Extra Ball and life
 		if count % 7 == 0:
+			Player.Player_Health += 1
 			var b = Ball.instance()
 			b.set_deferred("velocity", b.VELOCITY)
 			get_parent().call_deferred("add_child", b, true)

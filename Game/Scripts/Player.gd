@@ -78,7 +78,7 @@ func player_hit():
 		$Sprite.modulate.a8 = 0
 		get_parent().get_node("Camera2D").add_trauma(0.15)
 		Player_Health -= 1
-		if Player_Health < 1:
+		if Player_Health < 0:
 			get_parent().get_node("User Interface")._Game_Over()
 			pass
 	pass
