@@ -15,6 +15,8 @@ var Enemies = [
 var Player : KinematicBody2D
 var count = 1
 
+var Ball = preload("res://Scenes/Ball.tscn")
+
 var top_left : Vector2
 var bottom_right : Vector2
 
@@ -54,6 +56,12 @@ func enemy_destroyed():
 		$Timer.wait_time = 10.0
 		$Timer.start()
 		count+=1
+#		Extra Balls
+		if count % 5 == 0:
+			var b = Ball.instance()
+			b.set_deferred("velocity", b.VELOCITY)
+			get_parent().call_deferred("add_child", b, true)
+
 		for _i in range(count):
 			add_enemy()
 	pass

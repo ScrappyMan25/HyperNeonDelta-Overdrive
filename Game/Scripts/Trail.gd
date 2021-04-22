@@ -1,11 +1,11 @@
-extends Node2D
+extends Node
 
 var target
 export var trailLength = 32
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	target = get_parent().get_node("Ball")
+	target = get_parent()
 	pass # Replace with function body.
 
 
