@@ -3,10 +3,15 @@
 ## Basic Info 
 
 Jam: [Bullet Hell Jam 2021](https://itch.io/jam/bullet-jam-2021)
+
 Theme : BulletHell
+
 Started : 19-04-2021
+
 Due : 22-04-2021
+
 Engine : [Godot](https://godotengine.org)
+
 itch.io Link (Playable) : [Hyper Neon Delta Overdrive](https://teamapplepie.itch.io/hyper-neon-delta-overdrive)
 
 ## About
